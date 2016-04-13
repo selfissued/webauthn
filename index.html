@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Web Authentication: A Web API for accessing scoped credentials 1</title>
+  <title>Web Authentication: A Web API for accessing scoped credentials </title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
   <meta content="ED" name="w3c-status">
   <link href="https://www.w3.org/StyleSheets/TR/2016/W3C-ED" rel="stylesheet" type="text/css">
@@ -45,8 +45,8 @@
   <div class="head">
    <header>
     <p data-fill-with="logo"><a href="http://www.w3.org/"><img alt="W3C" height="48" src="http://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"></a> </p>
-    <h1 class="p-name no-ref" id="title">Web Authentication: A Web API for accessing scoped credentials 1</h1>
-    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-04-12">12 April 2016</time></span></h2>
+    <h1 class="p-name no-ref" id="title">Web Authentication: A Web API for accessing scoped credentials </h1>
+    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Editor’s Draft, <time class="dt-updated" datetime="2016-04-13">13 April 2016</time></span></h2>
    </header>
    <div data-fill-with="spec-metadata">
     <dl>
@@ -385,7 +385,7 @@ dictionary <a class="idl-code" data-link-type="dictionary" href="#dictdef-accoun
     required DOMString <dfn class="idl-code" data-dfn-for="Account" data-dfn-type="dict-member" data-export="" data-type="DOMString " id="dom-account-displayname">displayName<a class="self-link" href="#dom-account-displayname"></a></dfn>;
     DOMString          <dfn class="idl-code" data-dfn-for="Account" data-dfn-type="dict-member" data-export="" data-type="DOMString          " id="dom-account-name">name<a class="self-link" href="#dom-account-name"></a></dfn>;
     DOMString          <dfn class="idl-code" data-dfn-for="Account" data-dfn-type="dict-member" data-export="" data-type="DOMString          " id="dom-account-id">id<a class="self-link" href="#dom-account-id"></a></dfn>;
-    DOMString          <dfn class="idl-code" data-dfn-for="Account" data-dfn-type="dict-member" data-export="" data-type="DOMString          " id="dom-account-imageuri">imageUri<a class="self-link" href="#dom-account-imageuri"></a></dfn>;
+    DOMString          <dfn class="idl-code" data-dfn-for="Account" data-dfn-type="dict-member" data-export="" data-type="DOMString          " id="dom-account-imageurl">imageURL<a class="self-link" href="#dom-account-imageurl"></a></dfn>;
 };
 
 dictionary <a class="idl-code" data-link-type="dictionary" href="#dictdef-scopedcredentialparameters" id="ref-for-dictdef-scopedcredentialparameters-2">ScopedCredentialParameters</a> {
@@ -496,7 +496,7 @@ dictionary <dfn class="dfn-paneled idl-code" data-dfn-type="dictionary" data-exp
     <p>The <dfn data-dfn-for="Account" data-dfn-type="dfn" data-noexport="" id="account-displayname">displayName<a class="self-link" href="#account-displayname"></a></dfn> member contains the friendly name associated with the user account by the Relying Party, such as "John P. Smith".</p>
     <p>The <dfn data-dfn-for="Account" data-dfn-type="dfn" data-noexport="" id="account-name">name<a class="self-link" href="#account-name"></a></dfn> member contains a detailed name for the account, such as "john.p.smith@example.com".</p>
     <p>The <dfn data-dfn-for="Account" data-dfn-type="dfn" data-noexport="" id="account-id">id<a class="self-link" href="#account-id"></a></dfn> member contains an identifier for the account, stored for the use of the Relying Party. This is not meant to be displayed to the user.</p>
-    <p>The <dfn data-dfn-for="Account" data-dfn-type="dfn" data-noexport="" id="account-imageuri">imageUri<a class="self-link" href="#account-imageuri"></a></dfn> member contains a URI that resolves to the user’s account image. This may be a URL that can be used to retrieve the user’s current avatar, or a data URI that contains the image data.</p>
+    <p>The <dfn data-dfn-for="Account" data-dfn-type="dfn" data-noexport="" id="account-imageurl">imageURL<a class="self-link" href="#account-imageurl"></a></dfn> member contains a URL that resolves to the user’s account image. This may be a URL that can be used to retrieve an image containing the user’s current avatar, or a data URI that contains the image data.</p>
    </div>
    <h3 class="heading settled" data-level="4.4" id="credential-params"><span class="secno">4.4. </span><span class="content">Parameters for Credential Generation (dictionary <dfn class="dfn-paneled idl-code" data-dfn-type="dictionary" data-export="" data-lt="ScopedCredentialParameters" id="dictdef-scopedcredentialparameters">ScopedCredentialParameters<span class="dfn-panel" data-deco=""><b><a href="#dictdef-scopedcredentialparameters">#dictdef-scopedcredentialparameters</a></b><b>Referenced in:</b><span><a href="#ref-for-dictdef-scopedcredentialparameters-1">4. Web Authentication API</a> <a href="#ref-for-dictdef-scopedcredentialparameters-2">(2)</a></span></span></dfn>)</span><a class="self-link" href="#credential-params"></a></h3>
    <div>
@@ -1769,7 +1769,7 @@ A1                                      -- CBOR map of one element
       </ol>
     </ol>
     <p>The sample code for generating and registering a new key follows:</p>
-<pre class="example highlight" id="example-e79a5aee"><a class="self-link" href="#example-e79a5aee"></a>var webauthnAPI = window.webauthn;
+<pre class="example highlight" id="example-a779ffa3"><a class="self-link" href="#example-a779ffa3"></a>var webauthnAPI = window.webauthn;
 
 if (!webauthnAPI) { /* Platform not capable. Handle error. */ }
 
@@ -1778,7 +1778,7 @@ var userAccountInformation = {
   displayName: "John P. Smith",
   name: "johnpsmith@example.com",
   id: "1098237235409872",
-  imageUri: "https://pics.acme.com/00/p/aBjjjpqPb.png"
+  imageURL: "https://pics.acme.com/00/p/aBjjjpqPb.png"
 };
 
 // This Relying Party will accept either an ES256 or RS256 credential, but
@@ -2079,10 +2079,10 @@ webauthnAPI.getAssertion(challenge, timeoutSeconds, whitelist, extensions)
      <li><a href="#credential-id">dfn for Credential</a><span>, in §4.5.2</span>
     </ul>
    <li>
-    imageUri
+    imageURL
     <ul>
-     <li><a href="#dom-account-imageuri">dict-member for Account</a><span>, in §4</span>
-     <li><a href="#account-imageuri">dfn for Account</a><span>, in §4.3</span>
+     <li><a href="#dom-account-imageurl">dict-member for Account</a><span>, in §4</span>
+     <li><a href="#account-imageurl">dfn for Account</a><span>, in §4.3</span>
     </ul>
    <li>
     isInsideSecureHardware
@@ -2301,7 +2301,7 @@ dictionary <a class="idl-code" data-link-type="dictionary" href="#dictdef-accoun
     required DOMString <a data-type="DOMString " href="#dom-account-displayname">displayName</a>;
     DOMString          <a data-type="DOMString          " href="#dom-account-name">name</a>;
     DOMString          <a data-type="DOMString          " href="#dom-account-id">id</a>;
-    DOMString          <a data-type="DOMString          " href="#dom-account-imageuri">imageUri</a>;
+    DOMString          <a data-type="DOMString          " href="#dom-account-imageurl">imageURL</a>;
 };
 
 dictionary <a class="idl-code" data-link-type="dictionary" href="#dictdef-scopedcredentialparameters">ScopedCredentialParameters</a> {
